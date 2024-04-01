@@ -1,3 +1,4 @@
+<?php
 class Account
 {
     private int $accountNumber;
