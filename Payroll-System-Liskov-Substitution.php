@@ -1,3 +1,5 @@
+<?php
+
 interface Payroll {
     public function taxCalculation(float $baseSalary): float;
     public function getSalary(): float;
