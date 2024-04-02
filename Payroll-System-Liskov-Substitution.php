@@ -11,27 +11,32 @@ class SouthRegion implements Payroll {
     protected float $perHourCost;
     protected int $taxPercentage = 30;
 
-    public function __construct(int $totalHours, float $perHourCost) {
+    public function __construct(int $totalHours, float $perHourCost)
+    {
         $this->totalHours = $totalHours;
         $this->perHourCost = $perHourCost;
     }
 
-    public function taxCalculation(float $baseSalary): float {
+    public function taxCalculation(float $baseSalary): float
+    {
         return ($baseSalary / 100) * $this->taxPercentage;
     }
 
-    public function getBaseSalary(): float {
+    public function getBaseSalary(): float
+    {
         return $this->totalHours * $this->perHourCost;
     }
 
-    public function getSalary(): float {
+    public function getSalary(): float
+    {
         $baseSalary = $this->getBaseSalary();
         return $baseSalary - $this->taxCalculation($baseSalary);
     }
 }
 
 class FullTimeSouthRegionEmployee extends SouthRegion {
-    public function __construct(float $perHourCost) {
+    public function __construct(float $perHourCost)
+    {
         parent::__construct(240, $perHourCost);
     }
 }
